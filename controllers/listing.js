@@ -35,36 +35,19 @@ module.exports.showListingDetails = async (req, res) => {
 
   res.render("../views/listings/show.ejs", { listing });
 };
-
 // Create and Save new Listing in DB.
 module.exports.saveNewListing = async (req, res, next) => {
-  try {
-    const newListing = new Listing(req.body.listing);
+  const newListing = new Listing(req.body.listing);
+  const coords = await geocodeLocation(newListing.location, newListing.country);
 
-    const coords = await geocodeLocation(
-      newListing.location,
-      newListing.country,
-    );
-
-    newListing.latitude = coords.latitude;
-    newListing.longitude = coords.longitude;
-    if (!req.file) {
-      req.flash("error", "Please upload an image");
-      return res.redirect("/listings/new");
-    }
-    const { path: url, filename } = req.file;
-
-    newListing.owner = req.user._id;
-    newListing.image = { url, filename };
-
-    await newListing.save();
-
-    req.flash("success", "New Listing Added!");
-    res.redirect("/admin/listing");
-  } catch (err) {
-    console.error(err);
-    next(err);
-  }
+  newListing.latitude = coords.latitude;
+  newListing.longitude = coords.longitude;
+  const { path: url, filename } = req.file;
+  newListing.owner = req.user._id;
+  newListing.image = { url, filename };
+  await newListing.save();
+  req.flash("success", "New Listing Added!");
+  res.redirect("/listings");
 };
 
 // New Form to Edit Listing.
