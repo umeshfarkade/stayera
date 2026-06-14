@@ -48,7 +48,10 @@ module.exports.saveNewListing = async (req, res, next) => {
 
     newListing.latitude = coords.latitude;
     newListing.longitude = coords.longitude;
-
+    if (!req.file) {
+      req.flash("error", "Please upload an image");
+      return res.redirect("/listings/new");
+    }
     const { path: url, filename } = req.file;
 
     newListing.owner = req.user._id;
