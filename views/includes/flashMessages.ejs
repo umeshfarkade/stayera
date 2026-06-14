@@ -1,0 +1,17 @@
+<% if (success && success.length) { %>
+    <div class="custom-toast toast-success show-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>
+            <%= success %>
+        </span>
+    </div>
+    <% } %>
+
+        <% if (error && error.length && error[0] && error[0].trim().length> 0) { %>
+            <div class="custom-toast toast-error show-toast">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>
+                    <%= error %>
+                </span>
+            </div>
+            <% } %>

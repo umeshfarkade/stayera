@@ -1,0 +1,65 @@
+<% layout("layouts/boilerplate") %>
+
+  <div class="container my-5">
+    <a href="/listings"><button class="back-btn" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </button></a>
+    <div class="text-center mb-5">
+      <h1 class="fw-bold">Sitemap</h1>
+      <p class="text-muted">
+        Quickly navigate through all sections of StayERA.
+      </p>
+    </div>
+
+
+    <div class="row g-4">
+
+      <!-- Explore -->
+      <div class="col-md-3">
+        <h5 class="fw-bold mb-3">Explore</h5>
+        <ul class="list-unstyled">
+          <li><a href="/listings">All Listings</a></li>
+          <li><a href="/listings?category=Trending">Trending</a></li>
+          <li><a href="/listings?category=Amazing+Views">Amazing Views</a></li>
+          <li><a href="/listings?category=Amazing+Pools">Amazing Pools</a></li>
+          <li><a href="/listings?category=Camping">Camping</a></li>
+          <li><a href="/listings?category=Castles">Castles</a></li>
+          <li><a href="/listings?category=Arctic">Arctic</a></li>
+          <li><a href="/listings?category=Bed+%26+Breakfasts">Bed & Breakfasts</a></li>
+        </ul>
+      </div>
+
+      <!-- Hosting -->
+      <div class="col-md-3">
+        <h5 class="fw-bold mb-3">Hosting</h5>
+        <ul class="list-unstyled">
+          <li><a href="/listings/new">List Your Property</a></li>
+          <li><a href="/admin">Host Dashboard</a></li>
+        </ul>
+      </div>
+
+      <!-- Account -->
+      <div class="col-md-3">
+        <h5 class="fw-bold mb-3">Account</h5>
+        <ul class="list-unstyled">
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/profile">My Profile</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="col-md-3">
+        <h5 class="fw-bold mb-3">Company</h5>
+        <ul class="list-unstyled">
+          <li><a href="/company-details">About Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div>

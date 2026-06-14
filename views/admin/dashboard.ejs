@@ -1,0 +1,105 @@
+<% layout("layouts/slidebar") %>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back, <%= user.username %>👋</p>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+
+
+                    <%= user.username.charAt(0).toUpperCase() %>
+                </div>
+
+                <div>
+                    <h4>
+                        <%= user.username %>
+                    </h4>
+                    <span>
+                        <%= user.email %>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Listings</h3>
+                <p>
+                    <%= totalListings %>
+                </p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p>248</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <p>₹2,45,000</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Rating</h3>
+                <p>4.8 ⭐</p>
+            </div>
+
+        </div>
+
+        <div class="dashboard-row">
+
+            <div class="feedback-card">
+
+                <h2>Recent Feedback</h2>
+
+                <div class="feedback-item">
+                    <h4>Rahul Sharma</h4>
+                    <p>Excellent stay and very clean rooms.</p>
+                </div>
+
+                <div class="feedback-item">
+                    <h4>Priya Verma</h4>
+                    <p>Location was amazing and staff was helpful.</p>
+                </div>
+
+                <div class="feedback-item">
+                    <h4>Aman Gupta</h4>
+                    <p>Worth the price. Will visit again.</p>
+                </div>
+
+            </div>
+
+            <div class="query-card">
+
+                <h2>Recent Queries</h2>
+
+                <div class="query-item">
+                    <h4>Rohit Singh</h4>
+                    <p>Do you provide airport pickup service?</p>
+                </div>
+
+                <div class="query-item">
+                    <h4>Neha Patel</h4>
+                    <p>Is early check-in available?</p>
+                </div>
+
+                <div class="query-item">
+                    <h4>Karan Mehta</h4>
+                    <p>Can I bring pets to the property?</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>

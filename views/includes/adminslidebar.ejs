@@ -1,0 +1,46 @@
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="logo-area">
+            <i class="fas fa-hotel logo-icon"></i>
+            <span class="logo-text">StayERA</span>
+        </div>
+        <div class="host-badge"><i class="fas fa-verified"></i> Superhost</div>
+    </div>
+    <div class="profile-summary" id="sidebarProfile">
+        <div class="avatar">
+            <%= user.username.charAt(0).toUpperCase() %>
+        </div>
+        <div class="profile-info">
+            <h4>
+                <%= user.username %>
+            </h4>
+            <p>
+                <%= user.email %>
+            </p>
+        </div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="/admin">
+            <div class="nav-item " data-tab="dashboard"><i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </div>
+        </a>
+        <a href="/listings">
+            <div class="nav-item" data-tab="bookings"><i class="fas fa-calendar-check"></i> <span>Explore</span>
+            </div>
+        </a>
+        <a href="/admin/listing">
+            <div class="nav-item" data-tab="listings"><i class="fas fa-building"></i><span>Properties</span></div>
+        </a>
+        <a href="/admin/coming">
+            <div class="nav-item" data-tab="earnings"><i class="fas fa-dollar-sign"></i><span>Revenue</span></div>
+        </a>
+
+
+        <div class="nav-item logout-item" id="logoutBtnSidebar"><i class="fas fa-sign-out-alt"></i>
+            <a class="nav-link logout-btn" href="/logout">
+                Log Out
+            </a>
+        </div>
+    </div>
+</aside>
