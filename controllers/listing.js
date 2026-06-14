@@ -38,17 +38,33 @@ module.exports.showListingDetails = async (req, res) => {
 
 // Create and Save new Listing in DB.
 module.exports.saveNewListing = async (req, res, next) => {
+  console.log("=== CREATE LISTING START ===");
+  console.log("req.user =", req.user);
+  console.log("req.file =", req.file);
+
   const newListing = new Listing(req.body.listing);
-  const coords = await geocodeLocation(newListing.location, newListing.country);
+
+  const coords = await geocodeLocation(
+    newListing.location,
+    newListing.country
+  );
+
+  console.log("coords =", coords);
 
   newListing.latitude = coords.latitude;
   newListing.longitude = coords.longitude;
+
   const { path: url, filename } = req.file;
+
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
+
   await newListing.save();
+
+  console.log("=== LISTING SAVED ===");
+
   req.flash("success", "New Listing Added!");
-res.redirect("/listings");
+  res.redirect("/admin/listing");
 };
 
 // New Form to Edit Listing.
