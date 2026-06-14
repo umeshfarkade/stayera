@@ -48,7 +48,7 @@ module.exports.saveNewListing = async (req, res, next) => {
   newListing.image = { url, filename };
   await newListing.save();
   req.flash("success", "New Listing Added!");
-  res.redirect("admin/listing");
+res.redirect("/listings");
 };
 
 // New Form to Edit Listing.
